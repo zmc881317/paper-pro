@@ -11,6 +11,13 @@ import org.slf4j.LoggerFactory;
 public final class PaperBootstrap {
     private static final Logger LOGGER = LoggerFactory.getLogger("bootstrap");
 
+    if (Float.parseFloat(System.getProperty("java.class.version")) < 54.0) 
+    {
+        System.err.println(ANSI_RED + "ERROR: Your Java version is too lower,please switch it in startup menu!" + ANSI_RESET);
+        Thread.sleep(3000);
+        System.exit(1);
+    }
+
     private PaperBootstrap() {
     }
 
