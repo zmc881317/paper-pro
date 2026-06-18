@@ -87,7 +87,7 @@ jobs:
           echo "==========================="
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: server-jar
           path: server.jar
@@ -100,7 +100,7 @@ jobs:
       contents: write 
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: server-jar
 
@@ -133,7 +133,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Latest Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: server.jar
           tag_name: "latest"
